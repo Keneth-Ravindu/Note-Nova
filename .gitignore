@@ -1,5 +1,5 @@
 .env
 .vscode
-website/__pycache__
-website/database.db
+website\__pycache__
+website\database.db
 instance
