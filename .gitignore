@@ -1,7 +1,7 @@
 .env
 .vscode
-website\__pycache__
-website\database.db
+website/__pycache__
+website/database.db
 # Python cache
 __pycache__/
 *.pyc
