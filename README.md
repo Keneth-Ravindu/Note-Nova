@@ -141,25 +141,22 @@ notenova/
 ├── .env                # API key (ignored by Git)
 ├── .gitignore
 │
-├── website/
-│   ├── __init__.py
-│   ├── models.py
-│   ├── views.py
-│   ├── auth.py
-│   ├── ai.py
-│   │
-│   ├── templates/
-│   │   ├── base.html
-│   │   ├── home.html
-│   │   ├── login.html
-│   │   └── sign_up.html
-│   │
-│   └── static/
-│       ├── index.js
-│       ├── logo.svg
-│       └── favicon.svg
-│
-└── database.db
+└── website/
+    ├── __init__.py
+    ├── models.py
+    ├── views.py
+    ├── auth.py
+    ├── ai.py
+    │
+    ├── templates/
+    │   ├── base.html
+    │   ├── home.html
+    │   ├── login.html
+    │   └── sign_up.html
+    │
+    └── static/
+        └── index.js
+     
 ```
 
 ---
