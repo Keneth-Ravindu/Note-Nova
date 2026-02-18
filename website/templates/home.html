@@ -6,8 +6,8 @@
   <div class="glass rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
     <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <h1 class="text-2xl font-semibold tracking-tight">Notes</h1>
-        <p class="mt-1 text-sm text-slate-300">Keep your thoughts organized and easy to find.</p>
+        <h1 class="text-2xl font-semibold tracking-tight">Keep your thoughts organized and easy to find.</h1>
+        
       </div>
 
       {% if user.is_authenticated %}
@@ -26,9 +26,24 @@
           name="note"
           id="note"
           rows="3"
-          placeholder="Write something…"
+          placeholder="Write something brilliant..."
           class="w-full resize-none bg-transparent px-1 text-slate-100 placeholder:text-slate-400 outline-none"
         ></textarea>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+        <button type="button" class="rounded-xl bg-white/5 px-3 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10"
+                onclick="runAI('summarize')">Summarize</button>
+        <button type="button" class="rounded-xl bg-white/5 px-3 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10"
+                onclick="runAI('rewrite')">Rewrite</button>
+        <button type="button" class="rounded-xl bg-white/5 px-3 py-2 text-sm ring-1 ring-white/10 hover:bg-white/10"
+                onclick="runAI('title')">Title</button>
+        </div>
+
+        <div class="mt-3 rounded-2xl border border-white/10 bg-white/5 p-3">
+        <p class="text-xs text-slate-400">AI Output</p>
+        <pre id="aiOutput" class="mt-1 whitespace-pre-wrap text-sm text-slate-100"></pre>
+        </div>
+
 
         <div class="mt-3 flex items-center justify-between">
           <p class="text-xs text-slate-400">Tip: Short notes are easier to scan ✨</p>

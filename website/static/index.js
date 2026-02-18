@@ -184,3 +184,44 @@ function deleteNote(noteId) {
     }, 4000);
   });
 }
+
+async function runAI(action) {
+  const noteEl = document.getElementById("note");
+  const out = document.getElementById("aiOutput");
+  if (!noteEl || !out) return;
+
+  const text = noteEl.value || "";
+  out.textContent = "Thinking…";
+
+  try {
+    const res = await fetch("/ai", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action, text }),
+    });
+
+    // Read raw text first (works even if server returns HTML error page)
+    const raw = await res.text();
+
+    // If not OK, show status + body
+    if (!res.ok) {
+      out.textContent = `Request failed (${res.status})\n\n${raw}`;
+      return;
+    }
+
+    // Try to parse JSON
+    let data;
+    try {
+      data = JSON.parse(raw);
+    } catch {
+      out.textContent = `Server returned non-JSON:\n\n${raw}`;
+      return;
+    }
+
+    out.textContent = data.result || "(No result)";
+  } catch (e) {
+    out.textContent = `Network/Fetch error:\n${String(e)}`;
+  }
+}
+
+
