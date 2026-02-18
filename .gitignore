@@ -2,3 +2,8 @@
 .vscode
 website\__pycache__
 website\database.db
+# Python cache
+__pycache__/
+*.pyc
+**/__pycache__/
+*.py[cod]
