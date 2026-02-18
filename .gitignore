@@ -1,14 +1,22 @@
 .env
 .vscode
+<<<<<<< HEAD
 /website/__pycache__
 website\database.db
+=======
+website/__pycache__
+website/database.db
+>>>>>>> ba30f56eb9287aa017003fda62c401035ecb0227
 # Python cache
 __pycache__/
 *.pyc
 **/__pycache__/
 *.py[cod]
+<<<<<<< HEAD
 /website/__pycache__
 *.pyc
 /website
 *.db
 website/__pycache__/auth.cpython-314.pyc
+=======
+>>>>>>> ba30f56eb9287aa017003fda62c401035ecb0227
