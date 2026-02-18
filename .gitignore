@@ -9,6 +9,5 @@ __pycache__/
 *.py[cod]
 /website/__pycache__
 *.pyc
-/website
 *.db
 website/__pycache__/auth.cpython-314.pyc
